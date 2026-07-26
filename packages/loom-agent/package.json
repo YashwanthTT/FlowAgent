@@ -1,8 +1,8 @@
 {
-  "name": "@loom/cli",
+  "name": "@loom/agent",
   "version": "1.0.0",
-  "workspaces": ["packages/*"],
-  "scripts": {
-    "dev:cli": "bun run --watch packages/cli/ index.ts"
-  },
+  "private": true,
+  "dependencies": {
+    "@loom/ai": "*"
+  }
 }

@@ -1,11 +1,22 @@
-import { createCliRenderer, Input } from "@opentui/core"
+/**
+ * @loom/agent — The agent core package.
+ *
+ * Exports:
+ * - Tools (read_file, write_file) + definitions + executor
+ * - Agent loop (the main conversation orchestrator)
+ */
 
-const renderer = await createCliRenderer()
+export {
+  readFileDefinition,
+  executeReadFile,
+  writeFileDefinition,
+  executeWriteFile,
+  allToolDefinitions,
+  executeTool,
+} from "./src/tools";
 
-const input = Input({
-  placeholder: "Type something...",
-  width: 30,
-})
+export type { ReadFileResult } from "./src/tools";
+export type { WriteFileResult } from "./src/tools";
 
-input.focus()
-renderer.root.add(input)
+export { runAgentLoop } from "./src/agent-loop";
+export type { AgentCallbacks } from "./src/agent-loop";
